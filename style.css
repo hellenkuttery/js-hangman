@@ -1,0 +1,17 @@
+body{
+    background-color: rgb(10, 59, 67);
+    color:blanchedalmond;
+}
+
+.scene{
+    padding:20px;
+    
+}
+#word{
+    display:flex;
+}
+.letter{
+    border-bottom:5px solid rgb(183, 92, 12);
+    font-size:30px;
+    margin:0 5px;
+}
