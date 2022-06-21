@@ -1,14 +1,25 @@
 const myWord=document.getElementById("word");
 const popup=document.getElementById("popup-container");
 const myMessage=document.getElementById("message")
+const wrongLettersArray=document.getElementById("wrong-letters")
 const correctLetters=['t','a','j','c','v','s','p','r','i'];
-const worngLetters=[];
+const wrongLetters=[];
 
 
 function RandomWord(){
     const words=["javascript","scratch","html","java"];
     return words[Math.floor(Math.random()*words.length)];
 }
+
+function updateWrongLetters(){
+   
+    wrongLettersArray.innerHTML=`
+
+    ${wrongLetters.length>0 ? `<h3>Hatalı Harfler</h3>`:""}    
+    ${wrongLetters.map(letter=>`<span>${letter}</span>`)}`
+}
+
+
 const selectedWord=RandomWord();
 function display(){
     
@@ -46,9 +57,10 @@ window.addEventListener("keydown",function(e){
         }
        
         } else {
-            if (!worngLetters.includes(letter)){
-                worngLetters.push(letter)
-                console.log("Hatalı harfler",e.key)
+            if (!wrongLetters.includes(letter)){
+                wrongLetters.push(letter)
+                console.log("Hatalı harfler",e.key);
+                updateWrongLetters();
             }
        }
     }
