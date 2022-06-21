@@ -2,6 +2,7 @@ const myWord=document.getElementById("word");
 const popup=document.getElementById("popup-container");
 const myMessage=document.getElementById("message")
 const wrongLettersArray=document.getElementById("wrong-letters")
+const items=document.querySelectorAll(".item")
 const correctLetters=['t','a','j','c','v','s','p','r','i'];
 const wrongLetters=[];
 
@@ -17,6 +18,18 @@ function updateWrongLetters(){
 
     ${wrongLetters.length>0 ? `<h3>Hatalı Harfler</h3>`:""}    
     ${wrongLetters.map(letter=>`<span>${letter}</span>`)}`
+
+
+
+    items.forEach((item,index){
+        const error=wrongLetters.length;
+        if (index>error){
+            item.style.display="block"
+        }
+        else{
+            item.style.display="none"
+        }
+    })
 }
 
 
