@@ -19,4 +19,4 @@ Hangman Game
 ![hangman](assets/hangman.gif)
 
 ## Project Link
-[Hangman Game](https://hellenkuttery.github.io/parallax/)
+[Hangman Game](https://hellenkuttery.github.io/js-hangman/)
