@@ -11,7 +11,8 @@ const wrongLetters = [];
 
 function RandomWord() {
   const words = ["javascript", "scratch", "html", "java"];
-  return words[Math.floor(Math.random() * words.length)];
+  const randomWord=words[Math.floor(Math.random() * words.length)];
+  return randomWord;
 }
 function display() {
     console.log(selectedWord);
@@ -52,7 +53,8 @@ function updateWrongLetters() {
   });
   if (wrongLetters.length === items.length) {
     popup.style.display = "flex";
-    myMessage.innerText = "Kaybettiniz";
+    myMessage.innerText = `Kaybettiniz.Doğru kelime ${selectedWord}`;
+   
   }
 }
 
